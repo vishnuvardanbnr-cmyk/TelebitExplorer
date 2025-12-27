@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <script>
+      (function() {
+        var d = localStorage.getItem('explorer_design_variant');
+        if (d === 'design1' || d === 'design2' || d === 'design3') {
+          document.documentElement.classList.add(d);
+        } else {
+          document.documentElement.classList.add('design2');
+        }
+        var siteName = localStorage.getItem('explorer_site_name');
+        if (siteName) {
+          document.title = siteName;
+        }
+      })();
+    </script>
+    <title>Telebit Blockchain Explorer</title>
+    <meta name="description" content="Explore blocks, transactions, and accounts on the Telebit Blockchain. Track TBT activity, view contract details, and search the network." />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    
+    <!-- Open Graph / Social Media Preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://explorer.telemeet.space/" />
+    <meta property="og:title" content="Telebit Blockchain Explorer" />
+    <meta property="og:description" content="Explore blocks, transactions, and accounts on the Telebit Blockchain. Track TBT activity, view contract details, and search the network." />
+    <meta property="og:image" content="https://explorer.telemeet.space/og-image.png" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://explorer.telemeet.space/" />
+    <meta name="twitter:title" content="Telebit Blockchain Explorer" />
+    <meta name="twitter:description" content="Explore blocks, transactions, and accounts on the Telebit Blockchain. Track TBT activity, view contract details, and search the network." />
+    <meta name="twitter:image" content="https://explorer.telemeet.space/og-image.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
