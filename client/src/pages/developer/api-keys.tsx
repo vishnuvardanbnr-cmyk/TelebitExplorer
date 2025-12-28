@@ -143,7 +143,7 @@ export default function ApiKeysPage() {
             API Keys
           </h1>
           <p className="text-muted-foreground mt-1">
-            Manage your API keys for accessing Telebit Explorer API
+            Manage your API keys for accessing the Explorer API
           </p>
         </div>
         <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
@@ -219,7 +219,7 @@ export default function ApiKeysPage() {
         <CardHeader>
           <CardTitle>Your API Keys</CardTitle>
           <CardDescription>
-            API keys allow you to authenticate requests to the Telebit Explorer API.
+            API keys allow you to authenticate requests to the Explorer API.
           </CardDescription>
         </CardHeader>
         <CardContent>

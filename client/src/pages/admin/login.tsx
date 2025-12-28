@@ -51,7 +51,7 @@ export default function AdminLoginPage() {
           </div>
           <CardTitle className="text-2xl">Admin Login</CardTitle>
           <CardDescription>
-            Access the Telebit Explorer admin panel
+            Access the admin panel
           </CardDescription>
         </CardHeader>
         <CardContent>

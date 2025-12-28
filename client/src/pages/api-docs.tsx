@@ -3,6 +3,11 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { BookOpen, Code, Zap, Database, FileCode, Users, Coins, Blocks, ArrowRightLeft, Key } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+
+interface SettingsData {
+  branding?: Record<string, string>;
+}
 
 interface Endpoint {
   method: "GET" | "POST";
@@ -257,6 +262,13 @@ function EndpointCard({ endpoint }: { endpoint: Endpoint }) {
 }
 
 export default function ApiDocsPage() {
+  const { data: settings } = useQuery<SettingsData>({
+    queryKey: ["/api/settings"],
+    staleTime: 30000,
+  });
+  
+  const siteName = settings?.branding?.site_name || "Blockchain Explorer";
+  
   return (
     <div className="container mx-auto px-4 py-6 space-y-6">
       <div>
@@ -265,7 +277,7 @@ export default function ApiDocsPage() {
           API Documentation
         </h1>
         <p className="text-muted-foreground mt-1">
-          REST API endpoints for integrating with Telebit Explorer
+          REST API endpoints for integrating with {siteName}
         </p>
       </div>
 

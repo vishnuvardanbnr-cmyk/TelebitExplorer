@@ -53,7 +53,7 @@ export default function LoginPage() {
       queryClient.invalidateQueries({ queryKey: ["/api/auth/me"] });
       toast({
         title: "Account created!",
-        description: "Welcome to Telebit Explorer.",
+        description: "Welcome! Your account is ready.",
       });
       setLocation("/");
     },
@@ -101,7 +101,7 @@ export default function LoginPage() {
             </CardTitle>
             <CardDescription>
               {mode === "login" 
-                ? "Sign in to your Telebit Explorer account" 
+                ? "Sign in to your account" 
                 : "Sign up to access all features"}
             </CardDescription>
           </CardHeader>
